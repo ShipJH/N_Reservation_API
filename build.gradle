@@ -2,6 +2,8 @@ buildscript {
    ext {
 		lombokVersion = '1.18.8'
 		swaggerVersion = '2.8.0'
+ 		mariaVersion= '2.4.1'
+ 		mybatisSpringbootVersion = '2.0.1'
    }
 }
 
@@ -24,6 +26,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	 compile 'org.springframework.boot:spring-boot-starter-jdbc'
 	
 	compileOnly("org.projectlombok:lombok:${lombokVersion}")
     testCompileOnly("org.projectlombok:lombok:${lombokVersion}")
@@ -35,6 +38,16 @@ dependencies {
 	
 	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
 	compile group: 'io.springfox', name: 'springfox-swagger2', version: swaggerVersion
+	
+	//implementation 'org.springframework.boot:spring-boot-starter-security
+	//implementation 'io.jsonwebtoken:jjwt:0.9.1'
+	
+	compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.0.3'
+	compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: mybatisSpringbootVersion
+	
+	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.16'
+	
     
 	
 }
