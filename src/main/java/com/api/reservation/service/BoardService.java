@@ -2,7 +2,7 @@ package com.api.reservation.service;
 
 import java.util.List;
 
-import com.api.reservation.model.board.ReviewDto;
+import com.api.reservation.model.board.response.ReviewResponse;
 
 public interface BoardService {
 
@@ -11,7 +11,7 @@ public interface BoardService {
 	 * @param bizSeq
 	 * @return
 	 */
-	List<ReviewDto> getReviewList(int bizSeq);
+	List<ReviewResponse> getReviewList(int bizSeq);
 
 
 }

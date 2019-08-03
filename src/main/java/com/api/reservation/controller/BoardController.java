@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.reservation.model.board.ReviewDto;
+import com.api.reservation.model.board.response.ReviewResponse;
 import com.api.reservation.service.BoardService;
 
 import io.swagger.annotations.Api;
@@ -33,9 +33,9 @@ public class BoardController {
 	
 	@ApiOperation(value = "매장리뷰 조회 API")
 	@GetMapping(value = "/reviews/{bizSeq}")
-	public ResponseEntity<List<ReviewDto>> getReviews(@PathVariable int bizSeq) {
+	public ResponseEntity<List<ReviewResponse>> getReviews(@PathVariable int bizSeq) {
 		
-		List<ReviewDto> res = boardService.getReviewList(bizSeq);
+		List<ReviewResponse> res = boardService.getReviewList(bizSeq);
 		
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}

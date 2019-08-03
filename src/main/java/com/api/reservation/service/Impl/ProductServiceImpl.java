@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.api.reservation.mapper.ProductMapper;
 import com.api.reservation.model.product.ProductImageVo;
+import com.api.reservation.model.product.ProductOptionVo;
 import com.api.reservation.model.product.ProductVo;
 import com.api.reservation.model.product.response.ProductResponse;
 import com.api.reservation.service.ProductService;
@@ -54,6 +55,11 @@ public class ProductServiceImpl implements ProductService{
 		});
 		
 		return response;
+	}
+
+	@Override
+	public List<ProductOptionVo> getOptions(int productSeq) {
+		return productMapper.getOptions(productSeq);
 	}
 
 }

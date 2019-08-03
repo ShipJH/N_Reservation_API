@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.api.reservation.model.product.ProductOptionVo;
 import com.api.reservation.model.product.response.ProductResponse;
 import com.api.reservation.service.ProductService;
 
@@ -35,6 +36,16 @@ public class ProductController {
 	public ResponseEntity<List<ProductResponse>> getProducts(@PathVariable int bizSeq) {
 		
 		List<ProductResponse> res = productService.getProducts(bizSeq);
+		
+		return new ResponseEntity<>(res, HttpStatus.OK);
+	}
+	
+	
+	@ApiOperation(value = "상품옵션 조회 API")
+	@GetMapping(value = "/options/{productSeq}")
+	public ResponseEntity<List<ProductOptionVo>> getOptions(@PathVariable int productSeq) {
+		
+		List<ProductOptionVo> res = productService.getOptions(productSeq);
 		
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}

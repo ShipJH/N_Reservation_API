@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.assertj.core.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,7 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.api.reservation.config.JwtTokenProvider;
 import com.api.reservation.model.login.AuthBody;
-import com.api.reservation.model.login.Role;
 import com.api.reservation.model.login.User;
 import com.api.reservation.service.Impl.CustomUserDetailsService;
 

@@ -2,6 +2,7 @@ package com.api.reservation.service;
 
 import java.util.List;
 
+import com.api.reservation.model.product.ProductOptionVo;
 import com.api.reservation.model.product.response.ProductResponse;
 
 public interface ProductService {
@@ -12,5 +13,12 @@ public interface ProductService {
 	 * @return
 	 */
 	List<ProductResponse> getProducts(int bizSeq);
+
+	/**
+	 * 상품에대한 옵션을 조회합니다.
+	 * @param productSeq
+	 * @return
+	 */
+	List<ProductOptionVo> getOptions(int productSeq);
 
 }
