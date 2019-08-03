@@ -11,7 +11,7 @@ import com.api.reservation.mapper.BizMapper;
 import com.api.reservation.model.biz.BizImageDto;
 import com.api.reservation.model.biz.BizInfoDto;
 import com.api.reservation.model.biz.response.BizInfoResponse;
-import com.api.reservation.model.common.ResponseVo;
+import com.api.reservation.model.common.CommonResponseVo;
 import com.api.reservation.service.BizService;
 
 @Service
@@ -56,8 +56,6 @@ public class BizServiceImpl implements BizService {
 		List<BizInfoDto> bizInfo = bizMapper.getBizInfoList();
 		
 		bizInfo.stream().forEach(l -> {
-
-			
 			
 			BizInfoResponse bizInfoResponse = new BizInfoResponse();
 			

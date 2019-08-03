@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.api.reservation.model.biz.BizInfoDto;
 import com.api.reservation.model.biz.response.BizInfoResponse;
-import com.api.reservation.model.common.ResponseVo;
+import com.api.reservation.model.common.CommonResponseVo;
 
 public interface BizService {
 

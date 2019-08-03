@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter @Setter
 @Builder
 @AllArgsConstructor @NoArgsConstructor
-public class ResponseVo {
+public class CommonResponseVo {
 
 	@ApiModelProperty(value="HTTP 상태값")
 	private HttpStatus httpStatus; 
