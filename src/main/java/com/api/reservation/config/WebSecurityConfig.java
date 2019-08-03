@@ -42,7 +42,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/auth/login").permitAll()
                 .antMatchers("/auth/register").permitAll()
-                .antMatchers("/biz/**").hasAuthority("ADMIN").anyRequest().authenticated().and().csrf()
+                .antMatchers("/**").permitAll()
+//                .antMatchers("/biz/**").hasAuthority("ADMIN")
+                .anyRequest().authenticated().and().csrf()
                 .disable()
                 .exceptionHandling()
                 .authenticationEntryPoint(unauthorizedEntryPoint())
@@ -59,9 +61,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         							"/js/**", 
         							"/images/**", 
                                     "/v2/api-docs",
-                                    "/swagger-resources", 
+                                    "/swagger-resources/**", 
                                     "/swagger-resources/configuration/ui", 
                                     "/swagger-resources/configuration/security",					
+                                    "/webjars/springfox-swagger-ui/**",
                                     "/swagger-ui.html"
         		);
         

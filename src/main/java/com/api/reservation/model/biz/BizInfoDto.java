@@ -1,4 +1,4 @@
-package com.api.reservation.model;
+package com.api.reservation.model.biz;
 
 import java.time.LocalDateTime;
 
@@ -16,7 +16,7 @@ public class BizInfoDto {
 
 	/* 사업장 번호 */
 	@ApiModelProperty(value="사업장 번호", dataType="int")
-	private int bizSeq;
+	private int bizSeq; //추후 LONG 으로 변경.
 
 	/* 사업장 이름 */
 	@ApiModelProperty(value="사업장 이름", dataType="String" , required=true)

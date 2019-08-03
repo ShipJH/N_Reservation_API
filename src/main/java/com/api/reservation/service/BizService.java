@@ -2,7 +2,8 @@ package com.api.reservation.service;
 
 import java.util.List;
 
-import com.api.reservation.model.BizInfoDto;
+import com.api.reservation.model.biz.BizInfoDto;
+import com.api.reservation.model.biz.response.BizInfoResponse;
 import com.api.reservation.model.common.ResponseVo;
 
 public interface BizService {
@@ -14,11 +15,10 @@ public interface BizService {
 	List<BizInfoDto> getBizList();
 
 	/**
-	 * 유저정보 저장한다.
-	 * @param bizInfoDto
+	 * 모든 기업정보를 반환한다.
 	 * @return
 	 */
-	ResponseVo saveBiz(BizInfoDto bizInfoDto);
+	List<BizInfoResponse> getBizAllList();
 
 
 }
