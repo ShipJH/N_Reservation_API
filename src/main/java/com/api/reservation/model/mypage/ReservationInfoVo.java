@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class ReservationInfo {
+public class ReservationInfoVo {
 
 	@ApiModelProperty(value="예약번호", dataType="int" , required=true)
 	private int reservationSeq;

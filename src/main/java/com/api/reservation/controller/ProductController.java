@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.reservation.model.product.ProductOptionVo;
+import com.api.reservation.model.product.ProductVo;
 import com.api.reservation.model.product.response.ProductResponse;
 import com.api.reservation.service.ProductService;
 
@@ -42,6 +43,15 @@ public class ProductController {
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
 	
+	@ApiOperation(value = "상품상세정보 조회 API")
+	@GetMapping(value = "/product/{productSeq}")
+	public ResponseEntity<ProductVo> getProduct(@PathVariable int productSeq) {
+		
+		log.info("상품옵션 조회 접근 prductSeq : " + productSeq);
+		ProductVo res = productService.getProduct(productSeq);
+		
+		return new ResponseEntity<>(res, HttpStatus.OK);
+	}
 	
 	@ApiOperation(value = "상품옵션 조회 API")
 	@GetMapping(value = "/options/{productSeq}")
@@ -52,6 +62,8 @@ public class ProductController {
 		
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
+	
+
 	
 	
 }

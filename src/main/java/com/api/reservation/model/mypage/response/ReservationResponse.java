@@ -3,8 +3,8 @@ package com.api.reservation.model.mypage.response;
 import java.util.HashMap;
 import java.util.List;
 
-import com.api.reservation.model.mypage.ReservationInfo;
-import com.api.reservation.model.mypage.ReservationInfoDetail;
+import com.api.reservation.model.mypage.ReservationInfoVo;
+import com.api.reservation.model.mypage.ReservationInfoDetailVo;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;

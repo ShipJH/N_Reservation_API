@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.api.reservation.mapper.MyPageMapper;
-import com.api.reservation.model.mypage.ReservationInfo;
+import com.api.reservation.model.mypage.ReservationInfoVo;
 import com.api.reservation.model.mypage.response.ReservationResponse;
 import com.api.reservation.service.MyPageService;
 

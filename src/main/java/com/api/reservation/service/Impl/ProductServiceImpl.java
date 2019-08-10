@@ -62,4 +62,11 @@ public class ProductServiceImpl implements ProductService{
 		return productMapper.getOptions(productSeq);
 	}
 
+	
+	@Override
+	public ProductVo getProduct(int productSeq) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
