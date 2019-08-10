@@ -17,7 +17,9 @@ import com.api.reservation.service.ProductService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @CrossOrigin( value="*" )
 @RestController
 @RequestMapping(value = "/product")
@@ -45,6 +47,7 @@ public class ProductController {
 	@GetMapping(value = "/options/{productSeq}")
 	public ResponseEntity<List<ProductOptionVo>> getOptions(@PathVariable int productSeq) {
 		
+		log.info("상품옵션 조회 접근 prductSeq : " + productSeq);
 		List<ProductOptionVo> res = productService.getOptions(productSeq);
 		
 		return new ResponseEntity<>(res, HttpStatus.OK);

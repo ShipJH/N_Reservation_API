@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.reservation.model.mypage.ReservationInfo;
+import com.api.reservation.model.mypage.response.ReservationResponse;
 import com.api.reservation.service.MyPageService;
 
 import io.swagger.annotations.Api;
@@ -32,9 +33,9 @@ public class MyPageController {
 	
 	@ApiOperation(value = "예약내역 조회 API")
 	@GetMapping(value = "/history/{userSeq}")
-	public ResponseEntity<List<ReservationInfo>> getReservationHistory(@PathVariable int userSeq) {
+	public ResponseEntity<List<ReservationResponse>> getReservationHistory(@PathVariable int userSeq) {
 		
-		List<ReservationInfo> res = myPageService.getReservationHistory(userSeq);
+		List<ReservationResponse> res = myPageService.getReservationHistory(userSeq);
 		
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}

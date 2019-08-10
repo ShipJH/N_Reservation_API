@@ -13,12 +13,12 @@ import lombok.Setter;
 public class BizInfoResponse {
 
 	@ApiModelProperty(value="매장 번호", dataType="int")
-	int bizSeq;
+	private int bizSeq;
 	
-	@ApiModelProperty(value="매장 번호", dataType="Object")
-	BizInfoDto bizInfo;
+	@ApiModelProperty(value="매장 정보", dataType="Object")
+	private BizInfoDto bizInfo;
 	
 	@ApiModelProperty(value="매장  이미지", dataType="Object")
-	List<BizImageDto> bizImageList;
+	private List<BizImageDto> bizImageList;
 	
 }

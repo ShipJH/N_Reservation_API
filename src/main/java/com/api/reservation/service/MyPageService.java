@@ -2,7 +2,7 @@ package com.api.reservation.service;
 
 import java.util.List;
 
-import com.api.reservation.model.mypage.ReservationInfo;
+import com.api.reservation.model.mypage.response.ReservationResponse;
 
 public interface MyPageService {
 
@@ -11,6 +11,6 @@ public interface MyPageService {
 	 * @param userSeq
 	 * @return
 	 */
-	List<ReservationInfo> getReservationHistory(int userSeq);
+	List<ReservationResponse> getReservationHistory(int userSeq);
 
 }
