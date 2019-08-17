@@ -1,5 +1,6 @@
 package com.api.reservation.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,15 @@ public class BoardController {
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
 	
+	@ApiOperation(value = "매장리뷰 점수,평균조회 API")
+	@GetMapping(value = "/reviewStatistics/{bizSeq}")
+	public ResponseEntity<HashMap<String, Double>> getReviewStatistics(@PathVariable int bizSeq) {
+		
+		HashMap<String, Double> res = boardService.getReviewStatistics(bizSeq);
+		
+		return new ResponseEntity<>(res, HttpStatus.OK);
+	}	
+	
 	@ApiOperation(value = "매장리뷰 저장 API")
 	@PostMapping(value = "/save")
 	public ResponseEntity<CommonResponseVo> saveReview(ReviewRequest reviewRequest) {
@@ -51,6 +61,4 @@ public class BoardController {
 		
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}	
-	
-	
 }
