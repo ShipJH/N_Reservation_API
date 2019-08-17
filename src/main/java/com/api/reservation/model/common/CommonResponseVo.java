@@ -14,6 +14,9 @@ import lombok.Setter;
 @AllArgsConstructor @NoArgsConstructor
 public class CommonResponseVo {
 
+	@ApiModelProperty(value="상태 메세지.")
+	private String msg;
+	
 	@ApiModelProperty(value="HTTP 상태값")
 	private HttpStatus httpStatus; 
 }

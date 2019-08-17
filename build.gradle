@@ -48,6 +48,8 @@ dependencies {
 	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
 	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.16'
 	
-    
+    //aop setting
+	compile 'org.springframework:spring-aop:5.1.2.RELEASE'
+    compile 'org.springframework:spring-aspects:5.1.2.RELEASE'
 	
 }

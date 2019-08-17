@@ -21,8 +21,8 @@ public class ReviewDto {
 	@ApiModelProperty(value="후기내용" , dataType ="String" , required=true)
 	private String reviewContent;
 
-	@ApiModelProperty(value="사업장번호" , dataType ="String" , required=true)
-	private String bizSeq;
+	@ApiModelProperty(value="사업장번호" , dataType ="int" , required=true)
+	private int bizSeq;
 
 	@ApiModelProperty(value="사용자번호" , dataType ="int" , required=true)
 	private int userSeq;

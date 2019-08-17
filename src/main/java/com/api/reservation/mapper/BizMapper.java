@@ -11,11 +11,6 @@ import com.api.reservation.model.biz.BizInfoDto;
 @Mapper
 public interface BizMapper {
 
-	
-	@Select(" SELECT * "
-			+ " FROM BIZ_INFO ")
-	List<BizInfoDto> getBizList();
-
 	@Select("  SELECT * "
 			+ "  FROM BIZ_INFO "
 			+ " ")
@@ -23,7 +18,14 @@ public interface BizMapper {
 
 	@Select("  SELECT * "
 			+ "  FROM BIZ_IMAGE "
-			+ " WHERE BIZ_SEQ = #{bizSeq} ")
+			+ " WHERE BIZ_SEQ = #{bizSeq} "
+			+ " ORDER BY ORDER_NUM ASC ")
 	List<BizImageDto> getBizImgList(int bizSeq);
+
+	@Select("  SELECT * "
+			+ "  FROM BIZ_INFO "
+			+ " WHERE BIZ_SEQ = #{bizSeq} "
+			+ " ")
+	BizInfoDto getBiz(int bizSeq);
 	
 }
