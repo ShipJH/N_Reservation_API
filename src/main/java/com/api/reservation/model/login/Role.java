@@ -1,20 +1,15 @@
 package com.api.reservation.model.login;
 
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
 public class Role {
 
+	@ApiModelProperty(value="email" , dataType ="String" , required=true)
 	private String id;
 
+	@ApiModelProperty(value="권한" , dataType ="String" , required=true)
 	private String role;
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
-	}
 }
