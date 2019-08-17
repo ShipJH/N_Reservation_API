@@ -19,6 +19,9 @@ public class ReviewRequest {
 	@ApiModelProperty(value="옵션번호" , dataType ="int" , required=true)
 	private int optionSeq;
 
+	@ApiModelProperty(value="예약번호" , dataType ="int" , required=true)
+	private int reservationSeq;
+	
 	@ApiModelProperty(value="상품번호" , dataType ="int" , required=true)
 	private int productSeq;
 	

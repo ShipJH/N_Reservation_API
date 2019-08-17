@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Aspect
 @Slf4j
-@Component
+//@Component //aop 잠시 빼기..
 public class AopLogHandler {
 
 	@Around("within(com.api.reservation.controller.*)")

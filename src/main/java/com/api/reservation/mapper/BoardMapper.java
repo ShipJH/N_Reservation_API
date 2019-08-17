@@ -54,6 +54,7 @@ public interface BoardMapper {
 			+ "					,OPTION_SEQ "
 			+ "					,PRODUCT_SEQ "
 			+ "					,STAR_POINT "
+			+ "					,RESERVATION_SEQ "
 			+ "					)  "
 			+ "			VALUES ("
 			+ "					 #{reviewContent} "
@@ -62,6 +63,7 @@ public interface BoardMapper {
 			+ "					,#{optionSeq} "
 			+ "					,#{productSeq} "
 			+ "					,#{starPoint} "
+			+ "					,#{reservationSeq} "
 			+ "					) "
 			+ " ")
 	int saveReview(ReviewRequest reviewRequest);

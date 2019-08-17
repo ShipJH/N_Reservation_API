@@ -57,7 +57,7 @@ public class BoardServiceImpl implements BoardService {
 		try {
 			saveCnt = boardMapper.saveReview(reviewRequest);	
 		} catch (Exception e) {
-			
+			e.printStackTrace();
 			return CommonResponseVo.builder()
 								   .httpStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 								   .msg(MsgEnum.getMsg(HttpStatus.INTERNAL_SERVER_ERROR.value()))
