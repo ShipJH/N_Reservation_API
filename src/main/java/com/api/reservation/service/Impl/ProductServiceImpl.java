@@ -10,6 +10,7 @@ import com.api.reservation.mapper.ProductMapper;
 import com.api.reservation.model.product.ProductImageVo;
 import com.api.reservation.model.product.ProductOptionVo;
 import com.api.reservation.model.product.ProductVo;
+import com.api.reservation.model.product.response.ProductOneResponse;
 import com.api.reservation.model.product.response.ProductResponse;
 import com.api.reservation.service.ProductService;
 
@@ -63,9 +64,8 @@ public class ProductServiceImpl implements ProductService{
 
 	
 	@Override
-	public ProductVo getProduct(int productSeq) {
-		// TODO Auto-generated method stub
-		return null;
+	public ProductOneResponse getProduct(int productSeq) {
+		return productMapper.getProduct(productSeq);
 	}
 
 }

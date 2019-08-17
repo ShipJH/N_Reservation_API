@@ -3,11 +3,13 @@ package com.api.reservation.handler;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Aspect
 @Slf4j
+@Component
 public class AopLogHandler {
 
 	@Around("within(com.api.reservation.controller.*)")
