@@ -53,26 +53,28 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public CommonResponseVo saveReview(ReviewRequest reviewRequest) {
 		
-		CommonResponseVo res = new CommonResponseVo();
-		
 		int saveCnt =0;
 		try {
 			saveCnt = boardMapper.saveReview(reviewRequest);	
 		} catch (Exception e) {
-			res.setHttpStatus(HttpStatus.INTERNAL_SERVER_ERROR);
-			res.setMsg(MsgEnum.getMsg(HttpStatus.INTERNAL_SERVER_ERROR.value()));
-			return res;
+			
+			return CommonResponseVo.builder()
+								   .httpStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+								   .msg(MsgEnum.getMsg(HttpStatus.INTERNAL_SERVER_ERROR.value()))
+								   .build();
 		}
 		
 		if(saveCnt < 0) {
-			res.setHttpStatus(HttpStatus.BAD_REQUEST);
-			res.setMsg(MsgEnum.getMsg(HttpStatus.BAD_REQUEST.value()));
+			return CommonResponseVo.builder()
+								   .httpStatus(HttpStatus.BAD_REQUEST)
+								   .msg(MsgEnum.getMsg(HttpStatus.BAD_REQUEST.value()))
+								   .build();
 		}else {
-			res.setHttpStatus(HttpStatus.OK);
-			res.setMsg(MsgEnum.getMsg(HttpStatus.OK.value()));
+			return CommonResponseVo.builder()
+								   .httpStatus(HttpStatus.OK)
+								   .msg(MsgEnum.getMsg(HttpStatus.OK.value()))
+								   .build();
 		}
-		
-		return res;
 	}
 
 }
