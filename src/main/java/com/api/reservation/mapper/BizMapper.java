@@ -2,6 +2,7 @@ package com.api.reservation.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -27,5 +28,35 @@ public interface BizMapper {
 			+ " WHERE BIZ_SEQ = #{bizSeq} "
 			+ " ")
 	BizInfoDto getBiz(int bizSeq);
+	
+	@Insert("  INSERT INTO BIZ_INFO ("
+		+ "						BIZ_NAME"
+		+ "						,BIZ_NUM"
+		+ "						,BIZ_TYPE"
+		+ "						,BIZ_ADDRESS"
+		+ "						,BIZ_ZIPCODE"
+		+ "						,BIZ_MAP_LAT"
+		+ "						,BIZ_MAP_LON"
+		+ "						,BIZ_TEL"
+		+ "						,BIZ_EMAIL"
+		+ "						,BIZ_SIMPLE_DES"
+		+ "						,BIZ_DES"
+		+ "						,REG_DATE"
+		+ "	 						)"
+		+ "					VALUES ("
+		+ "						#{bizName}"
+		+ "						,#{bizNum}"
+		+ "						,#{bizType}"
+		+ "						,#{bizAddress}"
+		+ "						,#{bizZipcode}"
+		+ "						,#{bizMapLat}"
+		+ "						,#{bizMapLon}"
+		+ "						,#{bizTel}"
+		+ "						,#{bizEmail}"
+		+ "						,#{bizSimpleDes}"
+		+ "						,#{bizDes}"
+		+ "						,NOW()"
+			+ "						)")
+	void saveBizInfo(BizInfoDto bizInfoDto);
 	
 }
